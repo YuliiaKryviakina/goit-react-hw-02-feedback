@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Section } from "./Section/Section";
+import { NotificationMessage } from "./NotificationMessage/NotificationMessage";
 
 export class App extends Component {
   state = {
@@ -16,7 +17,7 @@ export class App extends Component {
     } else if (e === "Neutral") {
       this.setState({ neutral: this.state.neutral + 1 });
     } else if (e === "Bad") {
-      this.setState({ bad: this.setState.bad + 1 });
+      this.setState({ bad: this.state.bad + 1 });
     }
   };
 
@@ -38,6 +39,7 @@ export class App extends Component {
         style={{
           height: "100vh",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           fontSize: 40,
@@ -61,7 +63,7 @@ export class App extends Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
-            <Notification></Notification>
+            <NotificationMessage message="There is no feedback"></NotificationMessage>
           )}
         </Section>
       </div>

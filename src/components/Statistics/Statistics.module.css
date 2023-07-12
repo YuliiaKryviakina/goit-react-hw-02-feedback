@@ -6,6 +6,6 @@
 .feedbackListItem {
     display: flex;
     align-items: left;
-    font-size: 16px;
+    font-size: 24px;
     padding: 5px;
 }
